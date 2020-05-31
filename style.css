@@ -1,0 +1,5 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px;
+}
