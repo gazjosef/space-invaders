@@ -21,11 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     7,
     8,
     9,
-    10,
-    11,
-    12,
-    13,
-    14,
+
     15,
     16,
     17,
@@ -36,11 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     22,
     23,
     24,
-    25,
-    26,
-    27,
-    28,
-    29,
+
     30,
     31,
     32,
@@ -52,4 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     38,
     39,
   ];
+
+  // Draw The Alien Invaders
+  alienInvaders.forEach((invader) =>
+    squares[currentInvaderIndex + invader].classList.add('invader')
+  );
 });
