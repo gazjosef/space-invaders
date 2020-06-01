@@ -1,5 +1,5 @@
-const GAME_WIDTH = 800;
-const GAME_HEIGHT = 600;
+const GAME_WIDTH = 400;
+const GAME_HEIGHT = 300;
 
 const GAME_STATE = {
   playerX: 0,
@@ -7,7 +7,7 @@ const GAME_STATE = {
 };
 
 function setPosition($el, x, y) {
-  $el.style.transform = `translate(${x}, ${y})`;
+  $el.style.transform = `translate(${x}px, ${y}px)`;
 }
 
 function createPlayer($container) {
@@ -17,6 +17,7 @@ function createPlayer($container) {
   $player.src = 'img/player-blue-1.png';
   $player.className = 'player';
   $container.appendChild($player);
+  setPosition($player, GAME_STATE.playerX, GAME_STATE.playerY);
 }
 
 function init() {

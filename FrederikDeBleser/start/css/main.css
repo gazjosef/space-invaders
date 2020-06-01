@@ -37,6 +37,7 @@ footer {
   align-items: center;
   background: #222;
 }
+
 .game {
   width: 800px;
   height: 600px;
@@ -50,6 +51,7 @@ footer {
   from {
     background-position-y: 0px;
   }
+
   to {
     background-position-y: 256px;
   }
@@ -108,27 +110,29 @@ footer {
   border: 2px solid #36bbf5;
   border-radius: 3px;
   box-shadow: 0 2px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(
-    to bottom,
-    #fff 0%,
-    #fff 49%,
-    #f5f5f5 50%,
-    #eee 100%
-  );
+  background: linear-gradient(to bottom,
+      #fff 0%,
+      #fff 49%,
+      #f5f5f5 50%,
+      #eee 100%);
   padding: 10px 40px;
   font: 14px sans-serif;
 }
+
 @keyframes pop-in {
   0% {
     opacity: 0;
     transform: translate(0, -100px);
   }
+
   10% {
     opacity: 1;
   }
+
   50% {
     transform: translate(0, 30px);
   }
+
   100% {
     transform: translate(0, 0);
   }
