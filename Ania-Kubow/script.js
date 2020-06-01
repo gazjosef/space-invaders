@@ -93,5 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Decide Game
+    if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
+      resultDisplay.textContent = 'Game Over';
+      squares[currentShooterIndex].classList.add('Boom');
+      clearInterval(invaderID);
+    }
   }
 });
