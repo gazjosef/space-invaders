@@ -108,4 +108,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   invaderID = setInterval(moveInvaders, 500);
+
+  // Shoot At Aliens
+  function shoot(e) {
+    let laserId;
+    let currentLaserIndex = currentShooterIndex;
+
+    // Move The Laser From The Shooter To The Alien Invader
+    function moveLaser() {
+      squares[currentLaserIndex].classList.remove('laser');
+      currentLaserIndex -= width;
+      squares[currentInvaderIndex].classList.add('laser');
+      if (sqares[currentLaserIndex].contains('invader')) {
+        squares[currentInvaderIndex].classList.remove('laser');
+        squares[currentInvaderIndex].classList.remove('invader');
+      }
+    }
+  }
 });
