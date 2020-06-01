@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentShooterIndex % width !== 0) currentShooterIndex -= 1;
         break;
       case 39:
-        if (currentShooterIndex % width < width) currentShooterIndex += 1;
+        if (currentShooterIndex % width < width - 1) currentShooterIndex += 1;
         break;
     }
     squares[currentShooterIndex].classList.add('shooter');
@@ -98,5 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
       squares[currentShooterIndex].classList.add('Boom');
       clearInterval(invaderID);
     }
+
+    for (let i = 0; i <= alienInvaders.length - 1; i++) {
+      if (alienInvaders[i] > squares.length - (width - 1)) {
+        resultDisplay.textContent = 'Game Over';
+        clearInterval(invaderID);
+      }
+    }
   }
+
+  invaderID = setInterval(moveInvaders, 500);
 });
