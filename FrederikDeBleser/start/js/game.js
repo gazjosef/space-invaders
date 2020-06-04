@@ -1,5 +1,5 @@
-const GAME_WIDTH = 400;
-const GAME_HEIGHT = 300;
+const GAME_WIDTH = 800;
+const GAME_HEIGHT = 400;
 
 const GAME_STATE = {
   playerX: 0,
