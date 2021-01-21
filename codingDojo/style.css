@@ -2,10 +2,23 @@
     background-image: url('assets_basic/background.png');
     height: 800px;
     width: 1200px;
+    position: relative;
 }
 
 #hero {
     background-image: url('assets_basic/hero.png');
     height: 50px;
     width: 50px;
+    position: absolute;
+    top: 700px;
+    left: 550px;
+}
+
+.enemy {
+    background-image: url('assets_basic/enemy.png');
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 100px;
+    left: 550px;    
 }
