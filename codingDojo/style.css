@@ -27,11 +27,11 @@
     height: 800px;
     width: 1200px;
     position: absolute;
-    background-color: red;
 }
 
 .missile {
     background-image: url('assets_basic/missile1.png');
     height: 16px;
     width: 10px;
+    position: absolute;
 }
