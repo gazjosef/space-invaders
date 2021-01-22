@@ -37,3 +37,16 @@ function drawMissiles() {
         document.getElementById('missiles').innerHTML += `<div class='missile' style='left:${missiles[missile].left}px; top:${missiles[missile].top}px;'></div>`
     }
 }
+
+function moveMissiles() {
+    for(let missile = 0; missile < missiles.length; missile++) {
+        missiles[missile].top = missiles[missile].top - 5;
+    }
+}
+
+function gameLoop() {
+    setTimeout(gameLoop, 100);
+    moveMissiles()
+    drawMissiles()
+}
+gameLoop()
