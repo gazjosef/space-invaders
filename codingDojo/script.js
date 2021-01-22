@@ -5,6 +5,24 @@ const hero = {
 
 let missiles = []
 
+let enemies = [
+    { left: 200, top: 100 },
+    { left: 300, top: 100 },
+    { left: 400, top: 100 },
+    { left: 500, top: 100 },
+    { left: 600, top: 100 },
+    { left: 700, top: 100 },
+    { left: 800, top: 100 },
+    { left: 900, top: 100 },
+    { left: 200, top: 175 },
+    { left: 300, top: 175 },
+    { left: 400, top: 175 },
+    { left: 500, top: 175 },
+    { left: 600, top: 175 },
+    { left: 700, top: 175 },
+    { left: 800, top: 175 },
+    { left: 900, top: 175 },
+]
 
 document.onkeydown = (e) => {
     if(e.keyCode === 37) {
@@ -44,9 +62,17 @@ function moveMissiles() {
     }
 }
 
+function drawEnemies() {
+    document.getElementById('enemies').innerHTML = '';
+    for(let enemy = 0; enemy < enemies.length; enemy++) {
+        document.getElementById('enemies').innerHTML += `<div class='enemy' style='left:${enemies[enemy].left}px; top:${enemies[enemy].top}px;'></div>`
+    }   
+}
+
 function gameLoop() {
     setTimeout(gameLoop, 100);
     moveMissiles()
     drawMissiles()
+    drawEnemies()
 }
 gameLoop()
