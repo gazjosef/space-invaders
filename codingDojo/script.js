@@ -69,10 +69,17 @@ function drawEnemies() {
     }   
 }
 
+function moveEnemies() {
+    for(let enemy = 0; enemy < enemies.length; enemy++) {
+        enemies[enemy].top = enemies[enemy].top + 3;
+    }
+}
+
 function gameLoop() {
     setTimeout(gameLoop, 100);
     moveMissiles()
     drawMissiles()
+    moveEnemies()
     drawEnemies()
 }
 gameLoop()
