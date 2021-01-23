@@ -75,11 +75,22 @@ function moveEnemies() {
     }
 }
 
+function collisionDetection() {
+    for(let enemy = 0; enemy < enemies.length; enemy++) {
+        for(let missile = 0; missile < missiles.length; missile++) {
+            if(missiles[missile].top >= enemies[enemy].top + 50) {
+                console.log("hit");
+            }
+        }
+    }
+}
+
 function gameLoop() {
     setTimeout(gameLoop, 100);
     moveMissiles()
     drawMissiles()
     moveEnemies()
     drawEnemies()
+    collisionDetection()
 }
 gameLoop()
