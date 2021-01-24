@@ -45,7 +45,6 @@ function moveHero() {
     document.getElementById('hero').style.left = hero.left + "px"
 }
 
-
 function drawMissiles() {
     document.getElementById('missiles').innerHTML = '';
     for(let missile = 0; missile < missiles.length; missile++) {
@@ -75,13 +74,14 @@ function moveEnemies() {
 function collisionDetection() {
     for(let enemy = 0; enemy < enemies.length; enemy++) {
         for(let missile = 0; missile < missiles.length; missile++) {
-                if(
-                    (missiles[missile].top <= enemies[enemy].top + 50) &&
-                    (missiles[missile].top >= enemies[enemy].top) &&
-                    (missiles[missile].left >= enemies[enemy].left) &&
-                    (missiles[missile].left <= enemies[enemy].left + 50)
-                ) {
-                console.log("hit");
+            if(
+                (missiles[missile].top <= enemies[enemy].top + 50) &&
+                (missiles[missile].top >= enemies[enemy].top) &&
+                (missiles[missile].left >= enemies[enemy].left) &&
+                (missiles[missile].left <= enemies[enemy].left + 50)
+            ) {
+                enemies.splice(enemy, 1);
+                missiles.splice(missile, 1);
             }
         }
     }
