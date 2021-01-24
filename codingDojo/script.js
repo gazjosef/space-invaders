@@ -26,15 +26,12 @@ let enemies = [
 
 document.onkeydown = (e) => {
     if(e.keyCode === 37) {
-        console.log("LEFT");
         hero.left = hero.left - 10;
         moveHero()
     } else if (e.keyCode === 39) {
-        console.log("RIGHT");
         hero.left = hero.left + 10;
         moveHero()   
     } else if(e.keyCode === 32) {
-        console.log("SPACE");
         missiles.push({
             left: hero.left + 15,
             top: hero.top
@@ -78,7 +75,12 @@ function moveEnemies() {
 function collisionDetection() {
     for(let enemy = 0; enemy < enemies.length; enemy++) {
         for(let missile = 0; missile < missiles.length; missile++) {
-            if(missiles[missile].top >= enemies[enemy].top + 50) {
+                if(
+                    (missiles[missile].top <= enemies[enemy].top + 50) &&
+                    (missiles[missile].top >= enemies[enemy].top) &&
+                    (missiles[missile].left >= enemies[enemy].left) &&
+                    (missiles[missile].left <= enemies[enemy].left + 50)
+                ) {
                 console.log("hit");
             }
         }
@@ -86,7 +88,7 @@ function collisionDetection() {
 }
 
 function gameLoop() {
-    setTimeout(gameLoop, 100);
+    setTimeout(gameLoop, 50);
     moveMissiles()
     drawMissiles()
     moveEnemies()
