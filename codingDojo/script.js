@@ -96,3 +96,8 @@ function gameLoop() {
     collisionDetection()
 }
 gameLoop()
+
+// Bonus
+// Move Hero Top/Down
+// Move Enemies Left/Right as they move down.
+// Add Score
